@@ -1,0 +1,84 @@
+/**
+ * 仿原生密码输入框
+ */
+
+.x-pwd-input {
+  position: fixed;
+  top: -5000px;
+}
+
+.x-pwd-label {
+  display: block;
+  .px2rem(height, 74px);
+  .px2rem(margin-bottom, 40px);
+  text-align: center;
+
+  .dot {
+    content:'';
+    .px2rem(width, 20px);
+    .px2rem(height, 20px);
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 1rem;
+    background-color: #666666;
+    position: absolute;
+  }
+
+  &[nums="1"] {
+    span:nth-of-type(-n+1):after{
+      .dot;
+    }
+  }
+
+  &[nums="2"] {
+    span:nth-of-type(-n+2):after{
+      .dot;
+    }
+  }
+
+  &[nums="3"] {
+    span:nth-of-type(-n+3):after{
+      .dot;
+    }
+  }
+
+  &[nums="4"] {
+    span:nth-of-type(-n+4):after{
+      .dot;
+    }
+  }
+
+  &[nums="5"] {
+    span:nth-of-type(-n+5):after{
+      .dot;
+    }
+  }
+
+  &[nums="6"] {
+    span:nth-of-type(-n+6):after{
+      .dot;
+    }
+  }
+
+  span {
+    background-color: white;
+    display: inline-block;
+    margin: 0;
+    .px2rem(width, 74px);
+    .px2rem(height, 74px);
+    border-top: 1px solid #bcbcbc;
+    border-bottom: 1px solid #bcbcbc;
+    border-left: 1px solid #e3e3e3;
+    position: relative;
+  }
+
+  span:first-child {
+    border-left: 1px solid #bcbcbc;
+  }
+
+  span:last-child {
+    border-right: 1px solid #bcbcbc;
+  }
+}

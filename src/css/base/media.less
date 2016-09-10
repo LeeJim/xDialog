@@ -1,0 +1,23 @@
+/**
+ * 移动端响应式media
+ */
+
+html {
+  font-size: @root-value;
+}
+
+.loop(@i: 1) when (@i <= length(@responsive)) {  //注意less数组是从1开始的
+  @responsive-item: extract(@responsive, @i);
+
+  @media-font-size: @responsive-item / @base-width * @root-value;
+
+  @media only screen and (min-width: @responsive-item) {
+    html {
+      font-size: @media-font-size !important;
+    }
+  }
+
+  .loop((@i + 1));
+};
+
+.loop;

@@ -1,0 +1,120 @@
+.x-dialog-body {
+
+  .x-des {
+    .px2rem(padding-top, 40px);
+  }
+
+  .x-black {
+    color: @gray-dark;
+  }
+
+  h1, p {
+    line-height: 1;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  p {
+    color: @gray-light;
+  }
+
+  .x-order-info {
+    .px2rem(height, 204px);
+
+    h1 {
+      .px2rem(font-size, 52px);
+      .px2rem(margin-top, 18px);
+      .px2rem(margin-bottom, 18px);
+    }
+
+    .x-amount {
+      color: @gray-dark;
+    }
+
+    .x-symbol {
+      position: relative;
+      display: inline-block;
+      .px2rem(font-size, 36px);
+      .px2rem(top, 4px);
+      vertical-align: top;
+    }
+  }
+
+  .x-card-info {
+    position: relative;
+    .px2rem(height, 120px);
+    .px2rem(padding-left, 32px);
+    .px2rem(padding-right, 32px);
+
+    &:before {
+      .setTopLine();
+    }
+
+    &:after {
+      .setBottomLine();
+    }
+
+    img.x-bank-logo {
+      position: absolute;
+      .px2rem(width, 64px);
+      .px2rem(height, 64px);
+      .px2rem(margin-left, 24px);
+      .px2rem(margin-top, 28px);
+    }
+
+    h1, p {
+      .px2rem(margin-left, 102px);
+      text-align: left;
+    }
+
+    h1 {
+      .px2rem(padding-top, 30px);
+      .px2rem(margin-bottom, 12px);
+      .px2rem(font-size, 24px);
+      color: @gray-dark;
+      font-weight: normal;
+    }
+
+    p {
+      .px2rem(font-size, 22px);
+    }
+
+    span.x-no-card {
+      display: flex;
+      .px2rem(line-height, 120px);
+      .px2rem(font-size, 32px);
+      color: @gray-light;
+      justify-content: center;
+      align-items: center;
+    }
+
+    i.x-icon-danger {
+      .px2rem(width, 32px);
+      .px2rem(height, 32px);
+      .px2rem(margin-right, 12px);
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowNDgwMTE3NDA3MjA2ODExODIyQTlDOEYwNkVBOTEzQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0QTM1OTc3Njc2NzkxMUU2QTZGOTkwM0E5OUQ2QjZGRSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0QTM1OTc3NTc2NzkxMUU2QTZGOTkwM0E5OUQ2QjZGRSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDI5M0I2ODIxRjIwNjgxMTgwODNBRDQ5NDk1RTJERkQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDQ4MDExNzQwNzIwNjgxMTgyMkE5QzhGMDZFQTkxM0EiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7eb55aAAACKElEQVR42sSXvy8DYRjH3x7VNqUsmEUHIUGkiRCLNBHBZFERm8TaLojJiIU/gK0JAxsNk8WvSaSJSGhjbWPhUKKC7yPPCdUf73va3jf5JJfcvc/zvbvnvXsemz4xISRVDYZBP+gETaCWz92DG3AODsAueJQJWilxjRfMgnHgznFNA9MNpsET2ABLIJYvuJbnnBMsggswlSd5Nrl5zQWbcKoaaAYnfOdVwrxo7QzH8soa6AJH/J5zyjE5KWrC4S8qfL5CRijWIcfOa4Bc7oFGUXw1cmxvLgMusAXqRelEsbc51x8DC6BDlF7tnOuXASq6kCifQsarMAzMAXsZDdg555eBGv7IlFsByk0GhhQ/MsUS5RwiA35hnfwaV6Wy3i4vv4/fr65M7wiNd8C/9KHrZpc2kwGPha/AowmLRQZ0C/PrZCBuoYE4dURR7mTUCi+REK/7+/81ELWhJxzDwaZFTyBAryDCPVy5laLcZODBzBPQWlqEa35eOINBYfOY2snUtD4Y25Caz7TKasfoqKhsbRV2tGP2gQHV5GluVr9/x9Q6rygVYSqV9VhSq+CaDmw/BhNqk05l/w302OnOKXk6ElGqfNDDNfDLgNGUHpewL7wFvT+HlcxPMZ0YBMkSJE9y7FihueAM9PGjKpaiHPNMdjKK8ddxWXV3ZKn2ZY4VU50NX3g0awNrRtFI6hms89pZjpW9mBXH85GM8byOz91ljOc7suP5pwADAMRFedpmcw1QAAAAAElFTkSuQmCC') no-repeat center;
+      background-size: contain;
+    }
+
+  }
+}
+
+.x-dialog-foot {
+  .px2rem(margin-top, 40px);
+  .px2rem(margin-bottom, 40px);
+
+  .x-btn {
+    display: block;
+    .px2rem(margin-left, 32px);
+    .px2rem(margin-right, 32px);
+    .px2rem(height, 88px);
+    .px2rem(line-height, 88px);
+    .px2rem(font-size, 32px);
+    .px2rem(border-radius, 10px);
+    text-align: center;
+
+    color: #fff;
+    background-color: @brand-info;
+  }
+
+}

@@ -1,0 +1,49 @@
+.x-dialog-main {
+
+  .x-mask {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+  }
+
+  .x-dialog {
+    position: fixed;
+    z-index: 1100;
+    top: 50%;
+    left: 50%;
+    .px2rem(width, 520px);
+    background-color: #fff;
+    border-radius: 8px;
+    transform: translate(-50%, -50%);
+
+    .x-dialog-close {
+      z-index: 100;
+      position: fixed;
+      .px2rem(top, 32px);
+      .px2rem(left, 44px);
+      .px2rem(font-size, 44px);
+      .px2rem(width, 24px);
+      .px2rem(height, 24px);
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAIAAAAmKNuZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlFNEQ5RTBFNzY3OTExRTZBQzExODFBQ0U0N0Y0QTgxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlFNEQ5RTBGNzY3OTExRTZBQzExODFBQ0U0N0Y0QTgxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OUU0RDlFMEM3Njc5MTFFNkFDMTE4MUFDRTQ3RjRBODEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OUU0RDlFMEQ3Njc5MTFFNkFDMTE4MUFDRTQ3RjRBODEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4EvFZSAAABAElEQVR42qzVWw6EIAwFUDFdhp+6D124j30oPy5E5pIaxhkRWmITEl8cL2qjcc5V71WNAXGapm3byghMnOeZYxHGsiw4ZK3Fdtu2xdYwDD5d0zTGGBzCCVXGYGE6kDNd13WckUVhxqvV9z0jxOe0YtT6cirxyfrhhGLC+ueyYtqKcAkxa8W5qIjKWiiTaLJ1XVkEwc2Tth7T3TP6O+ess2cTxbmednXprs+eF5v9wmuJhd7GMiV9TRIrxMn2DMktSc+Q0BKKJLckIqmsrFhrrSDisvu7pgKLiy/jiSGjT7fvu9YKYsgIpOJv/TiOcRzR8K6oMBH/VSA+07u/7Y8AAwC307P1pe2/jwAAAABJRU5ErkJggg==') no-repeat center;
+      background-size: contain;
+      color: #999;
+    }
+
+    .x-dialog-head {
+      position: relative;
+      .px2rem(line-height, 88px);
+      .px2rem(font-size, 32px);
+      text-align: center;
+      color: @gray-dark;
+
+      &:after {
+        .setBottomLine();
+      }
+    }
+    
+  }
+}
