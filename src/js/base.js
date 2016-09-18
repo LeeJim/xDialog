@@ -6,18 +6,10 @@
  
  (function ($) {
 
-   $dialog = null;
+   var $dialog = null;
 
    $.x.dialog = function (options) {
-     var _html = `<div class="x-dialog-main">
-    <div class="x-mask"></div>
-      <div class="x-dialog">
-      <a class="x-dialog-close" href="javascript:;"></a>
-      <div class="x-dialog-head">${options.head}</div>
-      <div class="x-dialog-body">${options.body}</div>
-      <div class="x-dialog-foot">${options.foot}</div>
-      </div>
-    </div>`;
+     var _html = `<div class="x-dialog-main"><div class="x-mask"></div><div class="x-dialog"><a class="x-dialog-close" href="javascript:;"></a><div class="x-dialog-head">${options.head}</div><div class="x-dialog-body">${options.body}</div><div class="x-dialog-foot">${options.foot}</div></div></div>`;
 
      $dialog = $(_html);
      $('body').append($dialog);

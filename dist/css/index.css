@@ -3,231 +3,6 @@
 /**
  * 1px线
  */
-/**
- * 重置浏览器默认样式
- */
-html {
-  font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-p,
-blockquote,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-pre,
-fieldset,
-button,
-input,
-textarea,
-th,
-td,
-div {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-body {
-  font-family: inherit;
-  font-size: 14px;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-b,
-strong {
-  font-weight: bold;
-}
-small {
-  font-size: 80%;
-}
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-button,
-input,
-optgroup,
-select,
-textarea {
-  margin: 0;
-  font: inherit;
-  color: inherit;
-}
-button {
-  overflow: visible;
-}
-button,
-select {
-  text-transform: none;
-}
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: none;
-  cursor: pointer;
-}
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-fieldset {
-  padding: .35em .625em .75em;
-  margin: 0 2px;
-  border: 1px solid #ddd;
-}
-legend {
-  padding: 0;
-  border: 0;
-}
-textarea {
-  overflow: auto;
-}
-optgroup {
-  font-weight: bold;
-}
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-td,
-th {
-  padding: 0;
-}
-body,
-input,
-select,
-textarea,
-button {
-  /*字体变清晰*/
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-ol,
-ul {
-  list-style: none;
-}
-table {
-  border-collapse: collapse;
-}
-td,
-th {
-  text-align: left;
-  font-weight: 400;
-  vertical-align: middle;
-}
-a,
-a:hover,
-a:focus {
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-  -moz-tap-highlight-color: transparent;
-  -o-tap-highlight-color: transparent;
-  tap-highlight-color: transparent;
-}
-img {
-  width: 100%;
-  border: 0 none;
-  -ms-interpolation-mode: bicubic;
-}
-input:focus,
-textarea:focus,
-select:focus,
-button:focus,
-a:focus {
-  outline: 0;
-}
-/**
- * 移动端响应式media
- */
-html {
-  font-size: 20px;
-}
-@media only screen and (min-width: 320px) {
-  html {
-    font-size: 17.06666667px !important;
-  }
-}
-@media only screen and (min-width: 360px) {
-  html {
-    font-size: 19.2px !important;
-  }
-}
-@media only screen and (min-width: 375px) {
-  html {
-    font-size: 20px !important;
-  }
-}
-@media only screen and (min-width: 400px) {
-  html {
-    font-size: 21.33333333px !important;
-  }
-}
-@media only screen and (min-width: 414px) {
-  html {
-    font-size: 22.08px !important;
-  }
-}
-@media only screen and (min-width: 480px) {
-  html {
-    font-size: 25.6px !important;
-  }
-}
 .x-dialog-main .x-mask {
   position: fixed;
   z-index: 1000;
@@ -243,6 +18,7 @@ html {
   top: 50%;
   left: 50%;
   width: 13rem;
+  text-align: center;
   background-color: #fff;
   border-radius: 8px;
   transform: translate(-50%, -50%);
@@ -277,6 +53,22 @@ html {
   color: #d9d9d9;
   transform-origin: 0 100%;
   transform: scaleY(0.5);
+}
+.x-dialog-main .x-dialog .x-dialog-foot {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.x-dialog-main .x-dialog .x-dialog-foot .x-btn {
+  display: block;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  font-size: 0.8rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  color: #fff;
+  background-color: #3b9ce9;
 }
 /**
  * 仿原生密码输入框
@@ -392,7 +184,7 @@ html {
 .x-pwd-label span:last-child {
   border-right: 1px solid #bcbcbc;
 }
-.x-dialog-body .x-des {
+.x-dialog-body {
   padding-top: 1rem;
 }
 .x-dialog-body .x-black {
@@ -491,20 +283,4 @@ html {
   margin-right: 0.3rem;
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowNDgwMTE3NDA3MjA2ODExODIyQTlDOEYwNkVBOTEzQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0QTM1OTc3Njc2NzkxMUU2QTZGOTkwM0E5OUQ2QjZGRSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0QTM1OTc3NTc2NzkxMUU2QTZGOTkwM0E5OUQ2QjZGRSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDI5M0I2ODIxRjIwNjgxMTgwODNBRDQ5NDk1RTJERkQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDQ4MDExNzQwNzIwNjgxMTgyMkE5QzhGMDZFQTkxM0EiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7eb55aAAACKElEQVR42sSXvy8DYRjH3x7VNqUsmEUHIUGkiRCLNBHBZFERm8TaLojJiIU/gK0JAxsNk8WvSaSJSGhjbWPhUKKC7yPPCdUf73va3jf5JJfcvc/zvbvnvXsemz4xISRVDYZBP+gETaCWz92DG3AODsAueJQJWilxjRfMgnHgznFNA9MNpsET2ABLIJYvuJbnnBMsggswlSd5Nrl5zQWbcKoaaAYnfOdVwrxo7QzH8soa6AJH/J5zyjE5KWrC4S8qfL5CRijWIcfOa4Bc7oFGUXw1cmxvLgMusAXqRelEsbc51x8DC6BDlF7tnOuXASq6kCifQsarMAzMAXsZDdg555eBGv7IlFsByk0GhhQ/MsUS5RwiA35hnfwaV6Wy3i4vv4/fr65M7wiNd8C/9KHrZpc2kwGPha/AowmLRQZ0C/PrZCBuoYE4dURR7mTUCi+REK/7+/81ELWhJxzDwaZFTyBAryDCPVy5laLcZODBzBPQWlqEa35eOINBYfOY2snUtD4Y25Caz7TKasfoqKhsbRV2tGP2gQHV5GluVr9/x9Q6rygVYSqV9VhSq+CaDmw/BhNqk05l/w302OnOKXk6ElGqfNDDNfDLgNGUHpewL7wFvT+HlcxPMZ0YBMkSJE9y7FihueAM9PGjKpaiHPNMdjKK8ddxWXV3ZKn2ZY4VU50NX3g0awNrRtFI6hms89pZjpW9mBXH85GM8byOz91ljOc7suP5pwADAMRFedpmcw1QAAAAAElFTkSuQmCC') no-repeat center;
   background-size: contain;
-}
-.x-dialog-foot {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-.x-dialog-foot .x-btn {
-  display: block;
-  margin-left: 0.8rem;
-  margin-right: 0.8rem;
-  height: 2.2rem;
-  line-height: 2.2rem;
-  font-size: 0.8rem;
-  border-radius: 0.25rem;
-  text-align: center;
-  color: #fff;
-  background-color: #3b9ce9;
 }

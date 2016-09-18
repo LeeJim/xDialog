@@ -8,7 +8,11 @@ var gulp = require('gulp'),
     del = require('del');
 
 gulp.task('default', ['clean'], function(){
-  return gulp.start('scripts', 'styles', 'html', 'watch');
+  return gulp.start('scripts', 'styles', 'html');
+})
+
+gulp.task('dev', ['clean'], function(){
+  return gulp.start('default', 'watch');
 })
 
 gulp.task('clean', function(){
@@ -18,9 +22,9 @@ gulp.task('clean', function(){
 gulp.task('scripts', function(){
   return gulp.src('./src/js/*.js')
     .pipe(concat('index.js'))
+    .pipe(babel({presets: ['es2015']}))
     .pipe(gulp.dest('./dist/js'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(babel({presets: ['es2015']}))
     .pipe(uglify())
     .pipe(gulp.dest('./dist/js'))
 })
@@ -40,6 +44,8 @@ gulp.task('html', function(){
 })
 
 gulp.task('watch', function(){
+
+  console.log('begin watch~')
 
   gulp.watch('./src/js/*.js', ['scripts']);
 

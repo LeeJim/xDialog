@@ -16,6 +16,7 @@
     top: 50%;
     left: 50%;
     .px2rem(width, 520px);
+    text-align: center;
     background-color: #fff;
     border-radius: 8px;
     transform: translate(-50%, -50%);
@@ -43,6 +44,26 @@
       &:after {
         .setBottomLine();
       }
+    }
+
+    .x-dialog-foot {
+      .px2rem(margin-top, 40px);
+      .px2rem(margin-bottom, 40px);
+
+      .x-btn {
+        display: block;
+        .px2rem(margin-left, 32px);
+        .px2rem(margin-right, 32px);
+        .px2rem(height, 88px);
+        .px2rem(line-height, 88px);
+        .px2rem(font-size, 32px);
+        .px2rem(border-radius, 10px);
+        text-align: center;
+
+        color: #fff;
+        background-color: @brand-info;
+      }
+
     }
     
   }
