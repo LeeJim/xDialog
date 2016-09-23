@@ -22,9 +22,9 @@ $.x = $.x || {};
     });
 
     //点击遮罩
-    $dialog.on('click', '.x-mask', function () {
-      $.x.closeDialog();
-    });
+    // $dialog.on('click', '.x-mask', function () {
+    //   $.x.closeDialog();
+    // });
 
     return $dialog;
   };
@@ -39,6 +39,18 @@ $.x = $.x || {};
 
   var $payDialog = null;
 
+  /**
+   * 格式化金额
+   * @params {num} 需要格式化的数字
+   * @return {string} 返回格式化后的字符串(默认保留两位小数)
+   */
+  var num2Currency = function num2Currency(num) {
+    if (isNaN(num) || typeof num !== 'number' || !isFinite(num)) {
+      return '0.00';
+    }
+    return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+  };
+
   $.x.payDialog = function (options, callback) {
 
     options = $.extend({
@@ -51,18 +63,18 @@ $.x = $.x || {};
 
     var html_remain = '';
     if (options.remain) {
-      html_remain = '<p>使用余额支付<span class="x-black">' + options.remain.toFixed(2) + '</span>元</p>';
+      html_remain = '<p>使用余额支付<span class="x-black">' + num2Currency(options.remain) + '</span>元</p>';
     }
 
-    var html_body = '<div class="x-order-info"><p class="x-des">银行卡支付</p><h1 class="x-amount"><span class="x-symbol">¥</span>' + options.currentAmount.toFixed(2) + '</h1>' + html_remain + '</div>';
+    var html_body = '<div class="x-order-info"><p class="x-des">银行卡支付</p><h1 class="x-amount"><span class="x-symbol">¥</span>' + num2Currency(options.currentAmount) + '</h1>' + html_remain + '</div>';
 
     var html_card = '',
         //银行卡信息
     text_button = ''; //按钮文案
 
-    if (options.bankCode & options.bankCardDes && options.bankCardLimit) {
+    if (options.bankCode && options.bankCardDes && options.bankCardLimit) {
       //已绑定卡
-      html_card = '<div class="x-card-info"><img src="' + options.bankCode + '" class="x-bank-logo/><h1>' + options.bankCardDes + '</h1><p>' + options.bankCardLimit + '</p></div>';
+      html_card = '<div class="x-card-info"><img src="' + options.bankCode + '" class="x-bank-logo" /><h1>' + options.bankCardDes + '</h1><p>' + options.bankCardLimit + '</p></div>';
       text_button = '确认支付';
     } else {
       //未绑定卡
@@ -99,6 +111,18 @@ $.x = $.x || {};
   },
       _callback = function _callback() {};
 
+  /**
+   * 格式化金额
+   * @params {num} 需要格式化的数字
+   * @return {string} 返回格式化后的字符串(默认保留两位小数)
+   */
+  var num2Currency = function num2Currency(num) {
+    if (isNaN(num) || typeof num !== 'number' || !isFinite(num)) {
+      return '0.00';
+    }
+    return num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+  };
+
   $.x.pwdDialog = function (options, callback) {
 
     var html_body,
@@ -107,9 +131,9 @@ $.x = $.x || {};
     _options = $.extend(_options, options);
 
     if (_options.withdrawCard) {
-      html_body = '<div class="x-withdraw-info">定期提现<span class="color-primary">' + _options.currentAmount.toFixed(2) + '</span>，至<span class="color-primary">' + _options.withdrawCard + '</span></div>';
+      html_body = '<div class="x-withdraw-info">定期提现<span class="color-primary">' + num2Currency(_options.currentAmount) + '</span>，至<span class="color-primary">' + _options.withdrawCard + '</span></div>';
     } else {
-      html_body = '<div class="x-order-info"><p class="x-des">余额支付</p><h1 class="x-amount"><span class="x-symbol">¥</span>' + _options.currentAmount.toFixed(2) + '</h1><p>当前可用余额&nbsp;<span class="x-black">' + _options.remain + '</span>&nbsp;元</p></div>';
+      html_body = '<div class="x-order-info"><p class="x-des">余额支付</p><h1 class="x-amount"><span class="x-symbol">¥</span>' + num2Currency(_options.currentAmount) + '</h1><p>当前可用余额&nbsp;<span class="x-black">' + num2Currency(_options.remain) + '</span>&nbsp;元</p></div>';
     }
 
     var i = _options.pwdLen;
@@ -127,18 +151,20 @@ $.x = $.x || {};
 
     _callback = callback;
 
-    // 因为在IOS上键盘挡住输入框
-    var ua = navigator.userAgent.toLowerCase();
-    if (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1) {
-      $pwdDialog.find('.x-dialog').css('top', '30%');
-    }
-
     // 绑定密码输入框的事件
     $label = $("#xPwdLabel");
     $input = $pwdDialog.find('#xPassword');
     $input.on('input', function () {
       handlePwdChange.call(this);
     });
+
+    // 因为在IOS上键盘挡住输入框
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1) {
+      $input.on('focus', function () {
+        $pwdDialog.find('.x-dialog').css('top', '35%');
+      });
+    }
 
     // 弹出键盘
     $input.focus();

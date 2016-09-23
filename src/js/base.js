@@ -20,9 +20,9 @@
      });
 
      //点击遮罩
-     $dialog.on('click', '.x-mask', function () {
-       $.x.closeDialog();
-     });
+     // $dialog.on('click', '.x-mask', function () {
+     //   $.x.closeDialog();
+     // });
 
      return $dialog;
    };
